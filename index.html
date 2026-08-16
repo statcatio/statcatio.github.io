@@ -3,63 +3,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yuxin Zhang — Data & Visualization</title>
-  <meta name="description" content="Data scientist building interactive stories from messy data.">
+  <title>Yuxin Zhang — Data Scientist</title>
+  <meta name="description" content="Yuxin Zhang — a data scientist who turns messy, human data into stories you can actually scroll through.">
 
-  <!-- Open Graph — makes the LinkedIn / Twitter preview card look right -->
+  <!-- Open Graph: makes the LinkedIn / iMessage / Slack preview card look right -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Yuxin Zhang — Data & Visualization">
-  <meta property="og:description" content="Data scientist building interactive stories from messy data.">
+  <meta property="og:title" content="Yuxin Zhang — Data Scientist">
+  <meta property="og:description" content="A data scientist who turns messy, human data into stories you can actually scroll through.">
   <meta name="twitter:card" content="summary_large_image">
+
+  <!-- statcat favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%233C6E9F'/><g fill='none' stroke='%23EFF3E3' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'><path d='M9 8l3 5M23 8l-3 5'/><path d='M10 13h12v6a6 6 0 0 1-12 0z'/><path d='M13.5 16h.01M18.5 16h.01'/></g></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <main class="wrap">
+  <main class="doc">
 
-    <div class="meta-rule">
-      <span>Selected Work</span>
-      <span>Data &amp; Visualization</span>
-      <span>2026</span>
-    </div>
+    <!-- 1 · masthead meta rule -->
+    <header class="meta reveal">
+      <span>Statcat · Field Notes</span>
+      <span class="status">open to data &amp; viz roles</span>
+    </header>
 
-    <h1 class="wordmark">Yuxin<br>Zhang</h1>
+    <!-- 2 · wordmark -->
+    <h1 class="wordmark reveal">Yuxin<br>Zhang</h1>
 
-    <p class="dek">
-      Data scientist. I build interactive stories from messy data —
-      the kind you scroll through, not just look at.
+    <!-- 3 · role line -->
+    <p class="role reveal">
+      Data scientist. I turn messy, human data
+      <span class="soft">— arguments, headlines, a hundred thousand Reddit
+      comments —</span> into stories you can actually scroll through.
     </p>
 
-    <p class="kicker">Index of Work</p>
-    <ul class="works">
+    <!-- 4 · about -->
+    <section class="reveal anchor">
+      <h2 class="kicker">The short version</h2>
+      <div class="about sheet">
+        <p>
+          I'm drawn to the messy end of the field: language, opinion, the parts
+          of a dataset that don't fit neatly in a column. I like taking something
+          noisy and human and turning it into something a person would actually
+          <strong>want</strong> to read.
+        </p>
+        <p>
+          Most of what I make starts as a question that's a little too specific
+          to be useful and a little too fun to let go — like whether the internet
+          truly turned on a football team, or whether we just changed. Then I
+          scrape, model, and draw until there's an answer worth looking at.
+        </p>
+        <p>
+          Usual tools: Python, D3, a good deal of NLP, and more coffee than is
+          strictly advisable.
+        </p>
+      </div>
+      <p class="note">exhibit A &rarr; project 01. yes, I built a whole website about it.</p>
+    </section>
 
-      <a class="work" href="goat-to-scapegoat/">
-        <span class="num">01</span>
-        <span class="title">From GOAT to Scapegoat <span class="arrow">→</span></span>
-        <span class="year">2026</span>
-        <span class="desc">
-          Reddit turned on Argentina between two World Cup finals. A scrollytelling
-          analysis of the sentiment flip — same team, opposite reaction. Did they
-          change, or did we?
-        </span>
-        <span class="tags">NLP · Sentiment · D3 · Scrollytelling</span>
-      </a>
+    <!-- 5 · selected work -->
+    <section class="reveal">
+      <h2 class="kicker">Selected work</h2>
+      <div class="works">
 
-      <!-- Add the next project by copying this block, dropping its folder
-           alongside, and bumping the number. -->
-      <li class="work" aria-disabled="true">
-        <span class="num">02</span>
-        <span class="title">Next project</span>
-        <span class="year">—</span>
-        <span class="desc">In progress.</span>
-      </li>
+        <a class="work live" href="goat-to-scapegoat/">
+          <span class="id">N&deg;01</span>
+          <span class="title">From GOAT to Scapegoat<span class="arrow">&rarr;</span></span>
+          <span class="year">2026</span>
+          <span class="desc">
+            Reddit turned on Argentina between two World Cup finals. A
+            scrollytelling analysis of the sentiment flip — same team, opposite
+            reaction. Did they change, or did we?
+          </span>
+          <span class="tags">NLP · Sentiment · D3 · Scrollytelling</span>
+        </a>
 
-    </ul>
+        <!-- To add a project: copy this block, drop its folder alongside,
+             bump the N° and href, add real tags. -->
+        <div class="work soon">
+          <span class="id">N&deg;02</span>
+          <span class="title">In the notebook</span>
+          <span class="year">soon</span>
+          <span class="desc">Something's brewing. Check back.</span>
+        </div>
 
-    <footer class="foot">
-      <span>© 2026 Yuxin Zhang</span>
-      <a href="mailto:chzhan647@gmail.com">Email</a>
-      <a href="https://github.com/statcatio">GitHub</a>
+      </div>
+    </section>
+
+    <!-- 6 · field notes / currently -->
+    <section class="reveal anchor">
+      <h2 class="kicker">Field notes</h2>
+      <dl class="now sheet">
+        <div><dt>Building</dt><dd>the real-data pipeline behind project 01</dd></div>
+        <div><dt>Reading</dt><dd>whatever's on the nightstand</dd></div>
+        <div><dt>Rooting for</dt><dd>underdogs, lately</dd></div>
+        <div><dt>Fueled by</dt><dd>coffee, curiosity, mild spite</dd></div>
+      </dl>
+      <p class="note">these change often. that's rather the point of field notes.</p>
+    </section>
+
+    <!-- 7 · footer -->
+    <footer class="foot reveal">
+      <div>
+        <div class="links">
+          <a href="mailto:chzhan647@gmail.com">Email</a>
+          <a href="https://github.com/statcatio">GitHub</a>
+        </div>
+        <p class="colophon">
+          Set in Bricolage Grotesque &amp; Spline Sans Mono.<br>
+          Made by hand, on graph paper. &copy; 2026 Yuxin Zhang
+        </p>
+      </div>
+
+      <div class="cat" title="statcat" aria-hidden="true"><span class="wake"> /\_/\
+( o.o )
+ &gt; ^ &lt;</span><span class="sleep"> /\_/\
+( -.- )
+ &gt; ^ &lt;  z</span></div>
     </footer>
 
   </main>

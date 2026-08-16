@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "assets/style.css"
+        ],
+        "createdAt": "2026-08-16T19:29:26.020Z",
+        "reason": "User chose the Field Almanac direction; graph-paper grid is an intentional, domain-appropriate part of the visual world"
+      }
+    ]
+  }
+}
