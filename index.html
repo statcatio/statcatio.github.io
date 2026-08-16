@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yuxin Zhang — Data Scientist</title>
-  <meta name="description" content="Yuxin Zhang — a data scientist who turns messy, human data into stories you can actually scroll through.">
+  <title>Chloe Zhang — Data Scientist</title>
+  <meta name="description" content="Hi, I'm Chloe — a data scientist who turns messy, human data into stories you can actually scroll through.">
 
   <!-- Open Graph: makes the LinkedIn / iMessage / Slack preview card look right -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Yuxin Zhang — Data Scientist">
+  <meta property="og:title" content="Chloe Zhang — Data Scientist">
   <meta property="og:description" content="A data scientist who turns messy, human data into stories you can actually scroll through.">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -21,52 +21,107 @@
 
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body id="top">
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="statcat — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22">
+            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M9 8l3 5M23 8l-3 5"/>
+              <path d="M10 13h12v6a6 6 0 0 1-12 0z"/>
+              <path d="M13.5 16h.01M18.5 16h.01"/>
+            </g>
+          </svg>
+        </span>
+        statcat
+      </a>
+      <div class="nav-links">
+        <a href="#work">Projects</a>
+        <a href="#about">About</a>
+        <a href="https://www.linkedin.com/in/chloeyuxinzhang/" class="nav-cta" target="_blank" rel="noopener">Say hi</a>
+      </div>
+    </div>
+  </nav>
+
   <main class="doc">
 
-    <!-- 1 · masthead meta rule -->
-    <header class="meta reveal">
-      <span>Statcat · Field Notes</span>
-      <span class="status">open to data &amp; viz roles</span>
-    </header>
-
-    <!-- 2 · wordmark -->
-    <h1 class="wordmark reveal">Yuxin<br>Zhang</h1>
-
-    <!-- 3 · role line -->
-    <p class="role reveal">
-      Data scientist. I turn messy, human data
-      <span class="soft">— arguments, headlines, a hundred thousand Reddit
-      comments —</span> into stories you can actually scroll through.
-    </p>
-
-    <!-- 4 · about -->
-    <section class="reveal anchor">
-      <h2 class="kicker">The short version</h2>
-      <div class="about sheet">
-        <p>
-          I'm drawn to the messy end of the field: language, opinion, the parts
-          of a dataset that don't fit neatly in a column. I like taking something
-          noisy and human and turning it into something a person would actually
-          <strong>want</strong> to read.
-        </p>
-        <p>
-          Most of what I make starts as a question that's a little too specific
-          to be useful and a little too fun to let go — like whether the internet
-          truly turned on a football team, or whether we just changed. Then I
-          scrape, model, and draw until there's an answer worth looking at.
-        </p>
-        <p>
-          Usual tools: Python, D3, a good deal of NLP, and more coffee than is
-          strictly advisable.
+    <!-- Hero: the introduction -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1 class="intro">
+          Hi, I'm <span class="name" aria-label="Chloe"><span class="l">C</span><span class="l">h</span><span class="l">l</span><span class="l">o</span><span class="l">e</span></span> — I turn
+          messy, human data into <strong>stories you can actually scroll through</strong>.
+        </h1>
+        <p class="hero-sub">
+          I chase questions that are a little too specific to be useful and a
+          little too fun to let go. <span class="soft">(also, as you may have gathered: cats.)</span>
         </p>
       </div>
-      <p class="note">exhibit A &rarr; project 01. yes, I built a whole website about it.</p>
+
+      <!-- The cat, at play with a stray data point. Pet it. -->
+      <div class="hero-stage" role="img" aria-label="A cat batting at a bouncing data point.">
+        <svg class="scene" viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg">
+          <!-- ground -->
+          <line class="ground" x1="34" y1="218" x2="406" y2="218"/>
+
+          <!-- paw-print trail leading in -->
+          <g class="prints" fill="var(--ink-2)">
+            <g class="p"><circle cx="60" cy="214" r="3"/><circle cx="66" cy="210" r="2"/></g>
+            <g class="p"><circle cx="96" cy="216" r="3"/><circle cx="102" cy="212" r="2"/></g>
+            <g class="p"><circle cx="132" cy="214" r="3"/><circle cx="138" cy="210" r="2"/></g>
+          </g>
+
+          <!-- the stray data point -->
+          <circle class="dot" cx="150" cy="150" r="9" fill="var(--accent)"/>
+
+          <!-- the cat -->
+          <g class="cat">
+            <!-- tail -->
+            <path class="tail" d="M300 196 C 366 208 380 150 350 122" fill="none"
+                  stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
+            <!-- body -->
+            <path class="body" d="M214 156 C 206 222 314 222 306 156 Z"
+                  fill="var(--paper)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <!-- front paws -->
+            <ellipse cx="238" cy="212" rx="15" ry="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/>
+            <ellipse cx="282" cy="212" rx="15" ry="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/>
+            <!-- batting arm + paw -->
+            <g class="paw-bat">
+              <path d="M216 162 C 192 162 176 154 160 152" fill="none"
+                    stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+              <ellipse cx="156" cy="152" rx="12" ry="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/>
+            </g>
+            <!-- head -->
+            <circle cx="260" cy="110" r="46" fill="var(--paper)" stroke="var(--ink)" stroke-width="6"/>
+            <!-- ears -->
+            <path d="M224 80 L 214 44 L 252 68 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M296 80 L 306 44 L 268 68 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <!-- eyes -->
+            <g class="eyes" fill="var(--ink)">
+              <ellipse cx="242" cy="108" rx="5" ry="7"/>
+              <ellipse cx="278" cy="108" rx="5" ry="7"/>
+            </g>
+            <!-- nose -->
+            <path d="M254 122 L 266 122 L 260 130 Z" fill="var(--neg)"/>
+            <!-- whiskers -->
+            <g stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round">
+              <line x1="248" y1="126" x2="196" y2="120"/>
+              <line x1="248" y1="130" x2="198" y2="134"/>
+              <line x1="272" y1="126" x2="324" y2="120"/>
+              <line x1="272" y1="130" x2="322" y2="134"/>
+            </g>
+          </g>
+        </svg>
+        <span class="stage-hint" aria-hidden="true">click me</span>
+      </div>
     </section>
 
-    <!-- 5 · selected work -->
-    <section class="reveal">
-      <h2 class="kicker">Selected work</h2>
+    <!-- Projects -->
+    <section id="work">
+      <h2 class="kicker">Projects</h2>
       <div class="works">
 
         <a class="work live" href="goat-to-scapegoat/">
@@ -93,38 +148,111 @@
       </div>
     </section>
 
-    <!-- 6 · field notes / currently -->
-    <section class="reveal anchor">
-      <h2 class="kicker">Field notes</h2>
-      <dl class="now sheet">
-        <div><dt>Building</dt><dd>the real-data pipeline behind project 01</dd></div>
-        <div><dt>Reading</dt><dd>whatever's on the nightstand</dd></div>
-        <div><dt>Rooting for</dt><dd>underdogs, lately</dd></div>
-        <div><dt>Fueled by</dt><dd>coffee, curiosity, mild spite</dd></div>
-      </dl>
-      <p class="note">these change often. that's rather the point of field notes.</p>
+    <!-- About -->
+    <section id="about">
+      <h2 class="kicker">About</h2>
+      <div class="about sheet">
+        <p>
+          I'm drawn to the messy end of the field: language, opinion, the parts
+          of a dataset that don't fit neatly in a column. I like taking something
+          noisy and human and turning it into something a person would actually
+          <strong>want</strong> to read.
+        </p>
+        <p>
+          Most of what I make starts as a question that's a little too specific
+          to be useful and a little too fun to let go — like whether the internet
+          truly turned on a football team, or whether we just changed. Then I
+          scrape, model, and draw until there's an answer worth looking at.
+        </p>
+        <p>
+          Usual tools: Python, D3, a good deal of NLP, and more coffee than is
+          strictly advisable.
+        </p>
+      </div>
     </section>
 
-    <!-- 7 · footer -->
-    <footer class="foot reveal">
+    <!-- Footer -->
+    <footer class="foot">
       <div>
         <div class="links">
           <a href="mailto:chzhan647@gmail.com">Email</a>
-          <a href="https://github.com/statcatio">GitHub</a>
+          <a href="https://www.linkedin.com/in/chloeyuxinzhang/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/statcatio" target="_blank" rel="noopener">GitHub</a>
         </div>
         <p class="colophon">
           Set in Bricolage Grotesque &amp; Spline Sans Mono.<br>
-          Made by hand, on graph paper. &copy; 2026 Yuxin Zhang
+          Made by hand, on graph paper. &copy; 2026 Chloe Zhang
         </p>
       </div>
 
-      <div class="cat" title="statcat" aria-hidden="true"><span class="wake"> /\_/\
+      <button class="cat-btn" type="button" aria-label="A small cat. Click to pet it.">
+        <span class="mrrp" aria-hidden="true">mrrp!</span>
+        <pre class="cat-face" aria-hidden="true"> /\_/\
 ( o.o )
- &gt; ^ &lt;</span><span class="sleep"> /\_/\
-( -.- )
- &gt; ^ &lt;  z</span></div>
+ &gt; ^ &lt;</pre>
+      </button>
     </footer>
 
   </main>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* --- footer cat: idle blinks, hops + mrrp when petted --- */
+      var cat = document.querySelector('.cat-btn');
+      if (cat) {
+        var face = cat.querySelector('.cat-face');
+        var AWAKE = " /\\_/\\\n( o.o )\n > ^ <";
+        var BLINK = " /\\_/\\\n( -.- )\n > ^ <";
+        var HAPPY = " /\\_/\\\n( ^.^ )\n > ^ <";
+        if (!reduce) {
+          setInterval(function () {
+            if (cat.classList.contains('hop')) return;
+            face.textContent = BLINK;
+            setTimeout(function () {
+              if (!cat.classList.contains('hop')) face.textContent = AWAKE;
+            }, 160);
+          }, 4200);
+        }
+        cat.addEventListener('click', function () {
+          face.textContent = HAPPY;
+          cat.classList.remove('hop');
+          void cat.offsetWidth;
+          cat.classList.add('hop');
+          clearTimeout(cat._t1); clearTimeout(cat._t2);
+          cat._t1 = setTimeout(function () { face.textContent = AWAKE; }, 700);
+          cat._t2 = setTimeout(function () { cat.classList.remove('hop'); }, 900);
+        });
+      }
+
+      /* --- name: one-time boop wave on load, hints it's interactive --- */
+      var letters = document.querySelectorAll('.name .l');
+      if (!reduce && letters.length) {
+        letters.forEach(function (el, i) {
+          setTimeout(function () {
+            el.classList.add('boop');
+            el.addEventListener('animationend', function () {
+              el.classList.remove('boop');
+            }, { once: true });
+          }, 900 + i * 80);
+        });
+      }
+
+      /* --- hero cat: pounces when you click the scene --- */
+      var stage = document.querySelector('.hero-stage');
+      var heroCat = document.querySelector('.scene .cat');
+      if (stage && heroCat && !reduce) {
+        stage.addEventListener('click', function () {
+          heroCat.classList.remove('pounce');
+          void heroCat.getBBox;
+          heroCat.classList.add('pounce');
+        });
+        heroCat.addEventListener('animationend', function (e) {
+          if (e.animationName === 'pounce') heroCat.classList.remove('pounce');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-08-16T19:29:26.020Z",
         "reason": "User chose the Field Almanac direction; graph-paper grid is an intentional, domain-appropriate part of the visual world"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "*",
+        "files": [
+          "assets/style.css"
+        ],
+        "createdAt": "2026-08-16T23:14:27.856Z",
+        "reason": "User explicitly requested springy, Josh-Comeau-style 'boop' micro-interactions; the overshoot spring is the intentional motion language of the site"
       }
     ]
   }
