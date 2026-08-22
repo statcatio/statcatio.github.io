@@ -49,10 +49,33 @@
   }
   function pyArr2(a) { return "[" + a.map(pyArr).join(", ") + "]"; }
 
+  /* ---- responsive title wrapping ------------------------------------- */
+  // Plotly doesn't wrap titles, so long ones overflow behind the plot.
+  // We break the title into lines that fit the current plot width and let
+  // Plotly's title.automargin reserve room so nothing overlaps. TMC (max
+  // chars per line) is recomputed on every render + on window resize.
+  var TMC = 60;
+  function titleMaxChars() {
+    var el = document.getElementById("plot");
+    var w = el && el.clientWidth ? el.clientWidth : 640;
+    return Math.max(14, Math.floor((w - 90) / 10)); // ~10px per char at 18px
+  }
+  function wrapTitle(text, max) {
+    if (!text) return "";
+    var words = text.split(/\s+/), lines = [], cur = "";
+    words.forEach(function (w) {
+      if (!cur) cur = w;
+      else if ((cur + " " + w).length <= max) cur += " " + w;
+      else { lines.push(cur); cur = w; }
+    });
+    if (cur) lines.push(cur);
+    return lines.join("<br>");
+  }
+
   // fig.update_layout(...) as Python, mirroring layoutJS
   function layoutPy(s, axes) {
     var bg = BG[s.bg], lines = [];
-    if (s.title) lines.push("    title=" + pyStr(s.title) + ",");
+    if (s.title) lines.push("    title=dict(text=" + pyStr(wrapTitle(s.title, TMC)) + ", automargin=True),");
     lines.push("    plot_bgcolor=" + pyStr(bg.plot) + ",");
     lines.push("    paper_bgcolor=" + pyStr(bg.paper) + ",");
     lines.push('    font=dict(family="Spline Sans Mono, monospace", color=' + pyStr(bg.font) + "),");
@@ -62,17 +85,26 @@
     return "fig.update_layout(\n" + lines.join("\n") + "\n)";
   }
 
-  // Plotly.js layout object, mirroring layoutPy
+  // Plotly.js layout object, mirroring layoutPy.
+  // The preview lives in a fixed-height, overflow-hidden frame, so instead of
+  // relying on title.automargin we reserve an explicit top margin sized to the
+  // number of wrapped title lines (the Python code keeps the clean automargin).
   function layoutJS(s, axes) {
     var bg = BG[s.bg];
+    var wrapped = s.title ? wrapTitle(s.title, TMC) : "";
+    var lineCount = wrapped ? wrapped.split("<br>").length : 0;
     var L = {
       plot_bgcolor: bg.plot, paper_bgcolor: bg.paper,
       font: { family: "Spline Sans Mono, monospace", color: bg.font, size: 13 },
-      margin: { t: s.title ? 52 : 22, r: 24, b: axes ? 54 : 22, l: axes ? 58 : 22 },
+      margin: { t: s.title ? (20 + lineCount * 25) : 22, r: 24, b: axes ? 54 : 22, l: axes ? 58 : 22 },
       showlegend: s.legend,
       legend: { orientation: "h", y: -0.2, font: { size: 11 } }
     };
-    if (s.title) L.title = { text: s.title, font: { size: 18 } };
+    if (s.title) L.title = {
+      text: wrapped, font: { size: 18 },
+      xref: "paper", x: 0.5, xanchor: "center",
+      yref: "container", y: 1, yanchor: "top", pad: { t: 12 }
+    };
     if (axes) {
       L.xaxis = { title: { text: s.xTitle }, gridcolor: bg.grid, zerolinecolor: bg.grid, linecolor: bg.grid };
       L.yaxis = { title: { text: s.yTitle }, gridcolor: bg.grid, zerolinecolor: bg.grid, linecolor: bg.grid };
@@ -445,6 +477,7 @@
   /* ---- render -------------------------------------------------------- */
   var Plot = window.Plotly;
   function render() {
+    TMC = titleMaxChars(); // recompute wrap width for the current plot size
     var cfg = CHARTS[state.chartType];
     var config = { responsive: true, displayModeBar: false };
     if (Plot) Plot.react("plot", cfg.js(state), layoutJS(state, cfg.axes), config);
@@ -462,6 +495,13 @@
     $("t-title").addEventListener("input", function (e) { state.title = e.target.value; render(); });
     $("t-x").addEventListener("input", function (e) { state.xTitle = e.target.value; render(); });
     $("t-y").addEventListener("input", function (e) { state.yTitle = e.target.value; render(); });
+
+    // re-wrap the title (and code) as the plot width changes
+    var rt;
+    window.addEventListener("resize", function () {
+      clearTimeout(rt);
+      rt = setTimeout(render, 150);
+    });
 
     var copyBtn = $("copy-btn");
     copyBtn.addEventListener("click", function () {
