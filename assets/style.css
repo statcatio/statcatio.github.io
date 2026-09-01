@@ -8,16 +8,18 @@
 
 :root {
   /* --- palette (pinned) --- */
-  --paper:       #EFF3E3;
-  --paper-2:     #E5EAD5;
-  --ink:         #1C1A14;
-  --ink-2:       #5B5647;
-  --rule:        rgba(28, 26, 20, 0.16);
-  --rule-strong: rgba(28, 26, 20, 0.55);
+  --paper:       #F7D9AC;
+  --paper-2:     #F0CB95;
+  --card:        #FFF3E1;
+  --ink:         #0C1E20;
+  --ink-2:       #4F6063;
+  --rule:        rgba(12, 30, 32, 0.18);
+  --rule-strong: rgba(12, 30, 32, 0.52);
   --accent:      #3C6E9F;
-  --accent-ink:  #2E5A85;
+  --accent-ink:  #27567F;
   --neg:         #9E4A34;
-  --grid:        rgba(28, 26, 20, 0.05);
+  --olive:       #77834A;
+  --grid:        rgba(12, 30, 32, 0.055);
 
   /* --- type --- */
   --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
@@ -45,16 +47,13 @@ body {
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px),
-    radial-gradient(62vw 60vh at 6% 4%,   rgba(172, 158, 240, 0.42), transparent 60%),
-    radial-gradient(58vw 58vh at 96% 2%,  rgba(110, 206, 198, 0.44), transparent 60%),
-    radial-gradient(56vw 60vh at 44% 42%, rgba(255, 182, 120, 0.34), transparent 58%),
-    radial-gradient(60vw 60vh at 102% 56%, rgba(128, 186, 236, 0.40), transparent 60%),
-    radial-gradient(60vw 62vh at 2% 92%,  rgba(242, 158, 192, 0.40), transparent 60%),
-    radial-gradient(60vw 60vh at 94% 104%, rgba(255, 216, 132, 0.38), transparent 60%);
-  background-size: 26px 26px, 26px 26px, auto, auto, auto, auto, auto, auto;
-  background-position: -1px -1px, -1px -1px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
-  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-attachment: scroll, scroll, fixed, fixed, fixed, fixed, fixed, fixed;
+    radial-gradient(72vw 58vh at 4% 0%,   rgba(255, 232, 196, 0.72), transparent 62%),
+    radial-gradient(58vw 54vh at 98% 6%,  rgba(142, 154, 91, 0.20), transparent 60%),
+    radial-gradient(66vw 60vh at 52% 104%, rgba(226, 160, 118, 0.30), transparent 62%);
+  background-size: 26px 26px, 26px 26px, auto, auto, auto;
+  background-position: -1px -1px, -1px -1px, 0 0, 0 0, 0 0;
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, fixed, fixed, fixed;
 }
 
 ::selection { background: rgba(60, 110, 159, 0.22); }
@@ -259,7 +258,22 @@ a { color: inherit; }
   text-transform: uppercase;
   color: var(--ink-2);
 }
-.kicker::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+.kicker::after { content: ""; flex: 1; height: 1px; background: var(--rule); order: 2; }
+.kicker .more {
+  order: 3;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 7px 15px;
+  white-space: nowrap;
+  transition: background .18s ease, color .18s ease, transform .3s var(--spring);
+}
+.kicker .more:hover { background: var(--ink); color: var(--card); transform: translateY(-2px); }
 
 /* --- About ------------------------------------------------ */
 .about p {
@@ -288,38 +302,113 @@ a { color: inherit; }
   .note { display: block; margin: 16px 0 0; padding-left: 14px; border-left: 1px solid var(--rule); }
 }
 
-/* --- Index of work ---------------------------------------- */
-.works { display: block; }
-.work {
+/* --- Plates: picture cards for projects + goodies ---------- */
+.plates {
   display: grid;
-  grid-template-columns: 58px 1fr auto;
-  column-gap: 22px;
-  align-items: baseline;
-  padding: 30px 14px;
-  margin: 0 -14px;
-  border-top: 1px solid var(--rule);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 30px);
+}
+@media (max-width: 720px) { .plates { grid-template-columns: 1fr; } }
+
+.plate {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
+  transition: transform .4s var(--spring-soft), box-shadow .25s ease, border-color .2s ease;
 }
-.work:last-child { border-bottom: 1px solid var(--rule); }
-.work.live { transition: background .18s ease; }
-.work.live:hover { background: var(--paper-2); }
-.work .id { font-family: var(--mono); font-size: 12px; color: var(--ink-2); padding-top: 8px; }
-.work .title {
-  font-size: clamp(24px, 4vw, 34px);
+a.plate:hover {
+  transform: translateY(-4px);
+  border-color: var(--rule-strong);
+  box-shadow: 0 14px 34px rgba(12, 30, 32, 0.15);
+}
+
+/* the picture */
+.plate .frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.plate .frame img,
+.plate .frame .art { display: block; width: 100%; height: 100%; }
+.plate .frame img { object-fit: cover; transition: transform .7s var(--spring-soft); }
+a.plate:hover .frame img { transform: scale(1.045); }
+
+/* scrim so the caption stays legible over any picture */
+.plate .frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(12, 30, 32, 0.86) 0%,
+    rgba(12, 30, 32, 0.42) 32%,
+    rgba(12, 30, 32, 0) 62%);
+}
+
+.plate .onframe {
+  position: absolute;
+  z-index: 1;
+  left: 0; right: 0; bottom: 0;
+  padding: 16px clamp(16px, 2.2vw, 22px) 18px;
+  color: #FDF4E6;
+}
+.plate .onframe .id {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+.plate .onframe h3 {
+  margin: 5px 0 0;
+  font-size: clamp(20px, 2.6vw, 27px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.04;
-  transition: transform .38s var(--spring);
+  line-height: 1.07;
 }
-.work.live:hover .title { transform: translateY(-2px); }
-.work .arrow { display: inline-block; margin-left: 6px; color: var(--accent-ink); transition: transform .38s var(--spring); }
-.work.live:hover .arrow { transform: translateX(7px); }
-.work .desc { grid-column: 2; margin: 10px 0 0; max-width: 54ch; color: var(--ink-2); font-size: 16px; line-height: 1.5; }
-.work .tags { grid-column: 2; margin-top: 14px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
-.work .year { font-family: var(--mono); font-size: 12px; color: var(--ink-2); text-align: right; padding-top: 8px; }
-.work.soon { opacity: 0.5; }
-.work.soon .title { font-weight: 500; }
+.plate .arrow { display: inline-block; margin-left: 6px; transition: transform .38s var(--spring); }
+a.plate:hover .arrow { transform: translateX(7px); }
+
+/* the caption under the picture */
+.plate .body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 17px clamp(16px, 2.2vw, 22px) 20px;
+}
+.plate .body p { margin: 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.52; }
+.plate .tags {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* not-yet plates: hatched ground, a dozing cat */
+.plate.soon { opacity: 0.66; }
+.plate.soon .frame {
+  display: grid;
+  place-items: center;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 11px, var(--rule) 11px, var(--rule) 12px),
+    var(--paper-2);
+}
+.dozing {
+  margin: 0 0 14px;
+  font-family: var(--mono);
+  font-size: clamp(13px, 1.7vw, 16px);
+  line-height: 1.2;
+  white-space: pre;
+  color: var(--ink-2);
+}
 
 /* --- Field notes / currently ------------------------------ */
 .now { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 40px; font-family: var(--mono); font-size: 14px; }

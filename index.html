@@ -85,21 +85,21 @@
                   stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
             <!-- body -->
             <path class="body" d="M214 156 C 206 222 314 222 306 156 Z"
-                  fill="var(--paper)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+                  fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
             <!-- front paws -->
-            <ellipse cx="238" cy="212" rx="15" ry="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/>
-            <ellipse cx="282" cy="212" rx="15" ry="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/>
+            <ellipse cx="238" cy="212" rx="15" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
+            <ellipse cx="282" cy="212" rx="15" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
             <!-- batting arm + paw -->
             <g class="paw-bat">
               <path d="M216 162 C 192 162 176 154 160 152" fill="none"
                     stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
-              <ellipse cx="156" cy="152" rx="12" ry="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/>
+              <ellipse cx="156" cy="152" rx="12" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
             </g>
             <!-- head -->
-            <circle cx="260" cy="110" r="46" fill="var(--paper)" stroke="var(--ink)" stroke-width="6"/>
+            <circle cx="260" cy="110" r="46" fill="var(--card)" stroke="var(--ink)" stroke-width="6"/>
             <!-- ears -->
-            <path d="M224 80 L 214 44 L 252 68 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
-            <path d="M296 80 L 306 44 L 268 68 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M224 80 L 214 44 L 252 68 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M296 80 L 306 44 L 268 68 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
             <!-- eyes -->
             <g class="eyes" fill="var(--ink)">
               <ellipse cx="242" cy="108" rx="5" ry="7"/>
@@ -123,27 +123,103 @@
     <!-- Projects -->
     <section id="work">
       <h2 class="kicker">Projects</h2>
-      <div class="works">
+      <div class="plates">
 
-        <a class="work live" href="goat-to-scapegoat/">
-          <span class="id">N&deg;01</span>
-          <span class="title">From GOAT to Scapegoat<span class="arrow">&rarr;</span></span>
-          <span class="year">2026</span>
-          <span class="desc">
-            Reddit turned on Argentina between two World Cup finals. A
-            scrollytelling analysis of the sentiment flip — same team, opposite
-            reaction. Did they change, or did we?
-          </span>
-          <span class="tags">NLP · Sentiment · D3 · Scrollytelling</span>
+        <a class="plate" href="goat-to-scapegoat/">
+          <div class="frame">
+            <img src="assets/soccer-way.jpg"
+                 alt="A street sign reading SOCCER WAY beneath strings of national flags, with a cat sitting on the fire escape above."
+                 width="933" height="1400" loading="lazy" decoding="async">
+            <div class="onframe">
+              <span class="id">N&deg;01 &middot; 2026</span>
+              <h3>From GOAT to Scapegoat<span class="arrow">&rarr;</span></h3>
+            </div>
+          </div>
+          <div class="body">
+            <p>
+              Reddit turned on Argentina between two World Cup finals. A
+              scrollytelling analysis of the sentiment flip &mdash; same team,
+              opposite reaction. Did they change, or did we?
+            </p>
+            <span class="tags">NLP &middot; Sentiment &middot; D3 &middot; Scrollytelling</span>
+          </div>
         </a>
 
         <!-- To add a project: copy this block, drop its folder alongside,
-             bump the N° and href, add real tags. -->
-        <div class="work soon">
-          <span class="id">N&deg;02</span>
-          <span class="title">In the notebook</span>
-          <span class="year">soon</span>
-          <span class="desc">Something's brewing. Check back.</span>
+             bump the N&deg; and href, add a picture and real tags. -->
+        <div class="plate soon">
+          <div class="frame">
+            <pre class="dozing" aria-hidden="true"> /\_/\
+( -.- )
+ &gt; ^ &lt;</pre>
+            <div class="onframe">
+              <span class="id">N&deg;02 &middot; soon</span>
+              <h3>In the notebook</h3>
+            </div>
+          </div>
+          <div class="body">
+            <p>Something&rsquo;s brewing. Check back.</p>
+            <span class="tags">Undecided &middot; probably too specific</span>
+          </div>
+        </div>
+
+      </div>
+      <p class="note">There is, I promise, a cat on that fire escape.</p>
+    </section>
+
+    <!-- Goodies -->
+    <section id="goodies">
+      <h2 class="kicker">Goodies <a class="more" href="goodies/">The whole shelf &rarr;</a></h2>
+      <div class="plates">
+
+        <a class="plate" href="goodies/chart-lab/">
+          <div class="frame">
+            <svg class="art" viewBox="0 0 400 300" role="img"
+                 aria-label="A bar chart with one bar knocked flat and cat paw prints leading away from it.">
+              <rect x="58"  y="134" width="34" height="72"  rx="7" fill="var(--accent)"/>
+              <rect x="106" y="104" width="34" height="102" rx="7" fill="var(--olive)"/>
+              <rect x="154" y="64"  width="34" height="142" rx="7" fill="var(--accent)"/>
+              <rect x="202" y="120" width="34" height="86"  rx="7" fill="var(--neg)"/>
+              <!-- the fifth bar, no longer standing -->
+              <rect x="248" y="172" width="112" height="34" rx="7"
+                    fill="var(--olive)" transform="rotate(-4 248 172)"/>
+              <line x1="42" y1="206" x2="366" y2="206"
+                    stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
+              <!-- the culprit, leaving -->
+              <g fill="var(--ink)" opacity="0.5">
+                <g><circle cx="268" cy="132" r="5"/><circle cx="278" cy="124" r="3.2"/></g>
+                <g><circle cx="304" cy="110" r="5"/><circle cx="314" cy="102" r="3.2"/></g>
+                <g><circle cx="340" cy="88"  r="5"/><circle cx="350" cy="80"  r="3.2"/></g>
+              </g>
+            </svg>
+            <div class="onframe">
+              <span class="id">Interactive &middot; free</span>
+              <h3>Chart Lab<span class="arrow">&rarr;</span></h3>
+            </div>
+          </div>
+          <div class="body">
+            <p>
+              A sandbox for picking the right chart. Poke at the shapes until
+              the data makes sense &mdash; no sign-up, nothing to install.
+            </p>
+            <span class="tags">Dataviz &middot; In the browser</span>
+          </div>
+        </a>
+
+        <div class="plate soon">
+          <div class="frame">
+            <pre class="dozing" aria-hidden="true"> /\_/\
+( -.- )
+ &gt; ^ &lt;</pre>
+            <div class="onframe">
+              <span class="id">In the workshop</span>
+              <h3>Something next</h3>
+            </div>
+          </div>
+          <div class="body">
+            <p>Small, free, and probably a little odd. Same as the last one.</p>
+            <span class="tags">Coming &middot; eventually</span>
+          </div>
         </div>
 
       </div>
