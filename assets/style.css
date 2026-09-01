@@ -8,18 +8,18 @@
 
 :root {
   /* --- palette (pinned) --- */
-  --paper:       #F7D9AC;
-  --paper-2:     #F0CB95;
-  --card:        #FFF3E1;
-  --ink:         #0C1E20;
-  --ink-2:       #4F6063;
-  --rule:        rgba(12, 30, 32, 0.18);
-  --rule-strong: rgba(12, 30, 32, 0.52);
+  --paper:       #EFF3E3;
+  --paper-2:     #E5EAD5;
+  --card:        #F7FAEE;
+  --ink:         #1C1A14;
+  --ink-2:       #5B5647;
+  --rule:        rgba(28, 26, 20, 0.16);
+  --rule-strong: rgba(28, 26, 20, 0.55);
   --accent:      #3C6E9F;
-  --accent-ink:  #27567F;
+  --accent-ink:  #2E5A85;
   --neg:         #9E4A34;
-  --olive:       #77834A;
-  --grid:        rgba(12, 30, 32, 0.055);
+  --olive:       #6E7A44;
+  --grid:        rgba(28, 26, 20, 0.05);
 
   /* --- type --- */
   --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
