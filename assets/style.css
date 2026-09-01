@@ -47,13 +47,16 @@ body {
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px),
-    radial-gradient(72vw 58vh at 4% 0%,   rgba(255, 232, 196, 0.72), transparent 62%),
-    radial-gradient(58vw 54vh at 98% 6%,  rgba(142, 154, 91, 0.20), transparent 60%),
-    radial-gradient(66vw 60vh at 52% 104%, rgba(226, 160, 118, 0.30), transparent 62%);
-  background-size: 26px 26px, 26px 26px, auto, auto, auto;
-  background-position: -1px -1px, -1px -1px, 0 0, 0 0, 0 0;
-  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
-  background-attachment: scroll, scroll, fixed, fixed, fixed;
+    radial-gradient(62vw 60vh at 6% 4%,   rgba(172, 158, 240, 0.42), transparent 60%),
+    radial-gradient(58vw 58vh at 96% 2%,  rgba(110, 206, 198, 0.44), transparent 60%),
+    radial-gradient(56vw 60vh at 44% 42%, rgba(255, 182, 120, 0.34), transparent 58%),
+    radial-gradient(60vw 60vh at 102% 56%, rgba(128, 186, 236, 0.40), transparent 60%),
+    radial-gradient(60vw 62vh at 2% 92%,  rgba(242, 158, 192, 0.40), transparent 60%),
+    radial-gradient(60vw 60vh at 94% 104%, rgba(255, 216, 132, 0.38), transparent 60%);
+  background-size: 26px 26px, 26px 26px, auto, auto, auto, auto, auto, auto;
+  background-position: -1px -1px, -1px -1px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, fixed, fixed, fixed, fixed, fixed, fixed;
 }
 
 ::selection { background: rgba(60, 110, 159, 0.22); }
