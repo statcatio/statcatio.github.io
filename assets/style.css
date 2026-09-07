@@ -395,6 +395,27 @@ a.plate:hover .arrow { transform: translateX(7px); }
   color: var(--ink-2);
 }
 
+
+/* a logo sits in the frame rather than filling it: contained, centred, and
+   lifted clear of the caption scrim that darkens the lower third */
+.plate .frame.logo { background: var(--card); display: grid; place-items: center; }
+.plate .frame.logo img {
+  width: 36%;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(-14%);
+  transition: transform .55s var(--spring-soft);
+}
+/* a photo can afford a tall scrim; a logo cannot — confine it to the bottom
+   third so the mark stays clean above the caption */
+.plate .frame.logo::after {
+  background: linear-gradient(to top,
+    rgba(28, 26, 20, 0.88) 0%,
+    rgba(28, 26, 20, 0.46) 20%,
+    rgba(28, 26, 20, 0) 40%);
+}
+a.plate:hover .frame.logo img { transform: translateY(-14%) scale(1.07); }
+
 /* not-yet plates: hatched ground, a dozing cat */
 .plate.soon { opacity: 0.66; }
 .plate.soon .frame {
