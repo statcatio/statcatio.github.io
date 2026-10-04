@@ -167,6 +167,35 @@ a { color: inherit; }
 .hero-sub .soft { color: var(--ink-2); }
 .hero-status { margin: 28px 0 0; }
 
+.quick-links {
+  margin: 26px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.ql-label {
+  color: var(--ink-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.ql-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--accent-ink);
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 2px;
+  transition: border-color .15s ease, color .15s ease;
+}
+.ql-link:hover { border-color: var(--accent-ink); color: var(--ink); }
+.ql-link .arrow { display: inline-block; transition: transform .2s var(--spring); }
+.ql-link:hover .arrow { transform: translateX(3px); }
+
 /* the name, letters boop individually */
 .name { white-space: nowrap; }
 .name .l { display: inline-block; color: var(--ink); }
