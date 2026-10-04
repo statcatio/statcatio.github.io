@@ -48,10 +48,69 @@
 
   <main class="doc">
 
-    <!-- Masthead: name + what this place is -->
+    <!-- Masthead: name, what this place is, and the cat -->
     <header class="masthead">
-      <h1 class="site-title">Chloe Zhang</h1>
-      <p class="site-sub">A place to host my thoughts and side projects.</p>
+      <div class="masthead-copy">
+        <h1 class="site-title">Chloe Zhang</h1>
+        <p class="site-sub">Where I keep my side projects and the notes behind them.</p>
+      </div>
+
+      <!-- The cat, at play with a stray data point. Pet it. -->
+      <div class="hero-stage" role="img" aria-label="A cat batting at a bouncing data point.">
+        <svg class="scene" viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg">
+          <!-- ground -->
+          <line class="ground" x1="34" y1="218" x2="406" y2="218"/>
+
+          <!-- paw-print trail leading in -->
+          <g class="prints" fill="var(--ink-2)">
+            <g class="p"><circle cx="60" cy="214" r="3"/><circle cx="66" cy="210" r="2"/></g>
+            <g class="p"><circle cx="96" cy="216" r="3"/><circle cx="102" cy="212" r="2"/></g>
+            <g class="p"><circle cx="132" cy="214" r="3"/><circle cx="138" cy="210" r="2"/></g>
+          </g>
+
+          <!-- the stray data point -->
+          <circle class="dot" cx="150" cy="150" r="9" fill="var(--accent)"/>
+
+          <!-- the cat -->
+          <g class="cat">
+            <!-- tail -->
+            <path class="tail" d="M300 196 C 366 208 380 150 350 122" fill="none"
+                  stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
+            <!-- body -->
+            <path class="body" d="M214 156 C 206 222 314 222 306 156 Z"
+                  fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <!-- front paws -->
+            <ellipse cx="238" cy="212" rx="15" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
+            <ellipse cx="282" cy="212" rx="15" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
+            <!-- batting arm + paw -->
+            <g class="paw-bat">
+              <path d="M216 162 C 192 162 176 154 160 152" fill="none"
+                    stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+              <ellipse cx="156" cy="152" rx="12" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
+            </g>
+            <!-- head -->
+            <circle cx="260" cy="110" r="46" fill="var(--card)" stroke="var(--ink)" stroke-width="6"/>
+            <!-- ears -->
+            <path d="M224 80 L 214 44 L 252 68 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M296 80 L 306 44 L 268 68 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
+            <!-- eyes -->
+            <g class="eyes" fill="var(--ink)">
+              <ellipse cx="242" cy="108" rx="5" ry="7"/>
+              <ellipse cx="278" cy="108" rx="5" ry="7"/>
+            </g>
+            <!-- nose -->
+            <path d="M254 122 L 266 122 L 260 130 Z" fill="var(--neg)"/>
+            <!-- whiskers -->
+            <g stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round">
+              <line x1="248" y1="126" x2="196" y2="120"/>
+              <line x1="248" y1="130" x2="198" y2="134"/>
+              <line x1="272" y1="126" x2="324" y2="120"/>
+              <line x1="272" y1="130" x2="322" y2="134"/>
+            </g>
+          </g>
+        </svg>
+        <span class="stage-hint" aria-hidden="true">click me</span>
+      </div>
     </header>
 
     <!-- Projects -->
@@ -73,6 +132,19 @@
           </a>
         </li>
 
+        <li>
+          <a class="entry sub" href="goat-to-scapegoat/blog.html">
+            <span class="entry-no">&rdsh;</span>
+            <span class="entry-main">
+              <span class="entry-title">Measuring the internet&rsquo;s turn on Argentina<span class="arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="entry-desc">
+                How it was built: the data collection, the model choice, and the checks I ran before trusting the result.
+              </span>
+            </span>
+            <span class="entry-meta">Field notes</span>
+          </a>
+        </li>
+
         <!-- To add a project: copy this block, drop its folder alongside,
              bump the N&deg; and href, write one honest line. -->
         <li>
@@ -80,7 +152,6 @@
             <span class="entry-no">N&deg;02</span>
             <span class="entry-main">
               <span class="entry-title">In the notebook</span>
-              <span class="entry-desc">Something&rsquo;s brewing. Check back.</span>
             </span>
             <span class="entry-meta">Soon</span>
           </span>
@@ -197,6 +268,20 @@
           clearTimeout(cat._t1); clearTimeout(cat._t2);
           cat._t1 = setTimeout(function () { face.textContent = AWAKE; }, 700);
           cat._t2 = setTimeout(function () { cat.classList.remove('hop'); }, 900);
+        });
+      }
+
+      /* --- masthead cat: pounces when you click the scene --- */
+      var stage = document.querySelector('.hero-stage');
+      var heroCat = document.querySelector('.scene .cat');
+      if (stage && heroCat && !reduce) {
+        stage.addEventListener('click', function () {
+          heroCat.classList.remove('pounce');
+          void heroCat.getBBox;
+          heroCat.classList.add('pounce');
+        });
+        heroCat.addEventListener('animationend', function (e) {
+          if (e.animationName === 'pounce') heroCat.classList.remove('pounce');
         });
       }
     })();

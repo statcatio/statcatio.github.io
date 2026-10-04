@@ -167,8 +167,15 @@ a { color: inherit; }
 .hero-sub .soft { color: var(--ink-2); }
 .hero-status { margin: 28px 0 0; }
 
-/* --- Masthead: name + one line about the place --------------- */
-.masthead { padding: clamp(22px, 4vw, 40px) 0 clamp(12px, 2vw, 18px); }
+/* --- Masthead: name + one line about the place + the cat ----- */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 250px);
+  align-items: center;
+  gap: 20px;
+  padding: clamp(14px, 2.2vw, 24px) 0 clamp(6px, 1.2vw, 12px);
+}
+.masthead .hero-stage { justify-self: end; width: min(100%, 250px); }
 .site-title {
   margin: 0;
   font-size: clamp(34px, 6vw, 56px);
@@ -243,6 +250,14 @@ a.entry:hover .arrow { transform: translateX(6px); }
   white-space: nowrap;
 }
 .entry.soon { opacity: 0.6; }
+.entry.sub .entry-no { font-size: 15px; letter-spacing: 0; opacity: 0.75; }
+.entry.sub .entry-title { font-size: clamp(15px, 1.7vw, 17px); font-weight: 600; }
+.entry.sub .entry-desc { font-size: 14px; }
+
+@media (max-width: 720px) {
+  .masthead { grid-template-columns: 1fr; }
+  .masthead .hero-stage { justify-self: start; width: min(78%, 260px); }
+}
 
 @media (max-width: 620px) {
   .entry { grid-template-columns: 1fr auto; padding: 14px 4px; }
@@ -346,7 +361,7 @@ a.entry:hover .arrow { transform: translateX(6px); }
   color: var(--ink-2);
 }
 .kicker::after { content: ""; flex: 1; height: 1px; background: var(--rule); order: 2; }
-.kicker.tight { margin: clamp(18px, 2.8vw, 26px) 0 10px; }
+.kicker.tight { margin: clamp(14px, 2.2vw, 20px) 0 8px; }
 .kicker .more {
   order: 3;
   font-family: var(--mono);
