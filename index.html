@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chloe Zhang — Data Scientist</title>
-  <meta name="description" content="Hi, I'm Chloe — a data scientist who turns messy, human data into stories you can actually scroll through.">
+  <meta name="description" content="Chloe Zhang — a place to host my thoughts and side projects.">
 
   <!-- Open Graph: makes the LinkedIn / iMessage / Slack preview card look right -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Chloe Zhang — Data Scientist">
-  <meta property="og:description" content="A data scientist who turns messy, human data into stories you can actually scroll through.">
+  <meta property="og:description" content="A place to host my thoughts and side projects.">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- statcat favicon -->
@@ -39,9 +39,8 @@
         statcat
       </a>
       <div class="nav-links">
-        <a href="#work">Projects</a>
-        <a href="#about">About</a>
         <a href="goodies/">Goodies</a>
+        <a href="#about">About</a>
         <a href="https://www.linkedin.com/in/chloeyuxinzhang/" class="nav-cta" target="_blank" rel="noopener">Say hi</a>
       </div>
     </div>
@@ -49,189 +48,79 @@
 
   <main class="doc">
 
-    <!-- Hero: the introduction -->
-    <section class="hero">
-      <div class="hero-copy">
-        <h1 class="intro">
-          Hi, I'm <span class="name" aria-label="Chloe"><span class="l">C</span><span class="l">h</span><span class="l">l</span><span class="l">o</span><span class="l">e</span></span> — I turn
-          messy, human data into <strong>stories you can actually scroll through</strong>.
-        </h1>
-        <p class="hero-sub">
-          I chase questions that are a little too specific to be useful and a
-          little too fun to let go. <span class="soft">(also, as you may have gathered: cats.)</span>
-        </p>
-        <div class="quick-links">
-          <span class="ql-label">Start here</span>
-          <a class="ql-link" href="goat-to-scapegoat/">From GOAT to Scapegoat<span class="arrow" aria-hidden="true">&rarr;</span></a>
-          <a class="ql-link" href="goodies/chart-lab/">Chart Lab<span class="arrow" aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-
-      <!-- The cat, at play with a stray data point. Pet it. -->
-      <div class="hero-stage" role="img" aria-label="A cat batting at a bouncing data point.">
-        <svg class="scene" viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg">
-          <!-- ground -->
-          <line class="ground" x1="34" y1="218" x2="406" y2="218"/>
-
-          <!-- paw-print trail leading in -->
-          <g class="prints" fill="var(--ink-2)">
-            <g class="p"><circle cx="60" cy="214" r="3"/><circle cx="66" cy="210" r="2"/></g>
-            <g class="p"><circle cx="96" cy="216" r="3"/><circle cx="102" cy="212" r="2"/></g>
-            <g class="p"><circle cx="132" cy="214" r="3"/><circle cx="138" cy="210" r="2"/></g>
-          </g>
-
-          <!-- the stray data point -->
-          <circle class="dot" cx="150" cy="150" r="9" fill="var(--accent)"/>
-
-          <!-- the cat -->
-          <g class="cat">
-            <!-- tail -->
-            <path class="tail" d="M300 196 C 366 208 380 150 350 122" fill="none"
-                  stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
-            <!-- body -->
-            <path class="body" d="M214 156 C 206 222 314 222 306 156 Z"
-                  fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
-            <!-- front paws -->
-            <ellipse cx="238" cy="212" rx="15" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
-            <ellipse cx="282" cy="212" rx="15" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
-            <!-- batting arm + paw -->
-            <g class="paw-bat">
-              <path d="M216 162 C 192 162 176 154 160 152" fill="none"
-                    stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
-              <ellipse cx="156" cy="152" rx="12" ry="9" fill="var(--card)" stroke="var(--ink)" stroke-width="5"/>
-            </g>
-            <!-- head -->
-            <circle cx="260" cy="110" r="46" fill="var(--card)" stroke="var(--ink)" stroke-width="6"/>
-            <!-- ears -->
-            <path d="M224 80 L 214 44 L 252 68 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
-            <path d="M296 80 L 306 44 L 268 68 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="6" stroke-linejoin="round"/>
-            <!-- eyes -->
-            <g class="eyes" fill="var(--ink)">
-              <ellipse cx="242" cy="108" rx="5" ry="7"/>
-              <ellipse cx="278" cy="108" rx="5" ry="7"/>
-            </g>
-            <!-- nose -->
-            <path d="M254 122 L 266 122 L 260 130 Z" fill="var(--neg)"/>
-            <!-- whiskers -->
-            <g stroke="var(--ink-2)" stroke-width="2" stroke-linecap="round">
-              <line x1="248" y1="126" x2="196" y2="120"/>
-              <line x1="248" y1="130" x2="198" y2="134"/>
-              <line x1="272" y1="126" x2="324" y2="120"/>
-              <line x1="272" y1="130" x2="322" y2="134"/>
-            </g>
-          </g>
-        </svg>
-        <span class="stage-hint" aria-hidden="true">click me</span>
-      </div>
-    </section>
+    <!-- Masthead: name + what this place is -->
+    <header class="masthead">
+      <h1 class="site-title">Chloe Zhang</h1>
+      <p class="site-sub">A place to host my thoughts and side projects.</p>
+    </header>
 
     <!-- Projects -->
     <section id="work">
-      <h2 class="kicker">Projects</h2>
-      <div class="plates">
+      <h2 class="kicker tight">Projects</h2>
+      <ul class="index-list">
 
-        <a class="plate" href="goat-to-scapegoat/">
-          <div class="frame">
-            <img src="assets/soccer-way.jpg"
-                 alt="A street sign reading SOCCER WAY beneath strings of national flags, with a cat sitting on the fire escape above."
-                 width="933" height="1400" loading="lazy" decoding="async">
-            <div class="onframe">
-              <span class="id">N&deg;01 &middot; 2026</span>
-              <h3>From GOAT to Scapegoat<span class="arrow">&rarr;</span></h3>
-            </div>
-          </div>
-          <div class="body">
-            <p>
-              The internet turned on Argentina between two World Cup finals. A
-              scrollytelling analysis of 45K+ YouTube comments and the
-              sentiment flip they reveal &mdash; same team, opposite reaction.
-              Did they change, or did we?
-            </p>
-            <span class="tags">NLP &middot; Sentiment &middot; D3 &middot; Scrollytelling</span>
-          </div>
-        </a>
+        <li>
+          <a class="entry" href="goat-to-scapegoat/">
+            <span class="entry-no">N&deg;01</span>
+            <span class="entry-main">
+              <span class="entry-title">From GOAT to Scapegoat<span class="arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="entry-desc">
+                Did the internet turn on Argentina between two World Cup finals, or did we just change?
+                45,016 YouTube comments, scored.
+              </span>
+            </span>
+            <span class="entry-meta">2026 &middot; NLP &middot; D3</span>
+          </a>
+        </li>
 
         <!-- To add a project: copy this block, drop its folder alongside,
-             bump the N&deg; and href, add a picture and real tags. -->
-        <div class="plate soon">
-          <div class="frame">
-            <pre class="dozing" aria-hidden="true"> /\_/\
-( -.- )
- &gt; ^ &lt;</pre>
-            <div class="onframe">
-              <span class="id">N&deg;02 &middot; soon</span>
-              <h3>In the notebook</h3>
-            </div>
-          </div>
-          <div class="body">
-            <p>Something&rsquo;s brewing. Check back.</p>
-            <span class="tags">Undecided &middot; probably too specific</span>
-          </div>
-        </div>
+             bump the N&deg; and href, write one honest line. -->
+        <li>
+          <span class="entry soon">
+            <span class="entry-no">N&deg;02</span>
+            <span class="entry-main">
+              <span class="entry-title">In the notebook</span>
+              <span class="entry-desc">Something&rsquo;s brewing. Check back.</span>
+            </span>
+            <span class="entry-meta">Soon</span>
+          </span>
+        </li>
 
-      </div>
-      <p class="note">There is, I promise, a cat on that fire escape.</p>
+      </ul>
     </section>
 
     <!-- Goodies -->
     <section id="goodies">
-      <h2 class="kicker">Goodies <a class="more" href="goodies/">The whole shelf &rarr;</a></h2>
-      <div class="plates">
+      <h2 class="kicker tight">Goodies <a class="more" href="goodies/">The whole shelf &rarr;</a></h2>
+      <ul class="index-list">
 
-        <a class="plate" href="goodies/chart-lab/">
-          <div class="frame">
-            <svg class="art" viewBox="0 0 400 300" role="img"
-                 aria-label="A bar chart with one bar knocked flat and cat paw prints leading away from it.">
-              <rect x="58"  y="134" width="34" height="72"  rx="7" fill="var(--accent)"/>
-              <rect x="106" y="104" width="34" height="102" rx="7" fill="var(--olive)"/>
-              <rect x="154" y="64"  width="34" height="142" rx="7" fill="var(--accent)"/>
-              <rect x="202" y="120" width="34" height="86"  rx="7" fill="var(--neg)"/>
-              <!-- the fifth bar, no longer standing -->
-              <rect x="248" y="172" width="112" height="34" rx="7"
-                    fill="var(--olive)" transform="rotate(-4 248 172)"/>
-              <line x1="42" y1="206" x2="366" y2="206"
-                    stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
-              <!-- the culprit, leaving -->
-              <g fill="var(--ink)" opacity="0.5">
-                <g><circle cx="268" cy="132" r="5"/><circle cx="278" cy="124" r="3.2"/></g>
-                <g><circle cx="304" cy="110" r="5"/><circle cx="314" cy="102" r="3.2"/></g>
-                <g><circle cx="340" cy="88"  r="5"/><circle cx="350" cy="80"  r="3.2"/></g>
-              </g>
-            </svg>
-            <div class="onframe">
-              <span class="id">Interactive &middot; free</span>
-              <h3>Chart Lab<span class="arrow">&rarr;</span></h3>
-            </div>
-          </div>
-          <div class="body">
-            <p>
-              A sandbox for picking the right chart. Poke at the shapes until
-              the data makes sense &mdash; no sign-up, nothing to install.
-            </p>
-            <span class="tags">Dataviz &middot; In the browser</span>
-          </div>
-        </a>
+        <li>
+          <a class="entry" href="goodies/chart-lab/">
+            <span class="entry-no">01</span>
+            <span class="entry-main">
+              <span class="entry-title">Chart Lab<span class="arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="entry-desc">
+                A sandbox for picking the right chart. Poke at the shapes until the data makes sense.
+              </span>
+            </span>
+            <span class="entry-meta">Interactive</span>
+          </a>
+        </li>
 
-        <a class="plate" href="goat-to-scapegoat/lab/">
-          <div class="frame logo">
-            <img src="assets/d3_0.png" alt="The D3 logo."
-                 width="400" height="400" loading="lazy" decoding="async">
-            <div class="onframe">
-              <span class="id">Process &middot; five plates</span>
-              <h3>D3 Lab<span class="arrow">&rarr;</span></h3>
-            </div>
-          </div>
-          <div class="body">
-            <p>
-              The five prototypes behind <em>From GOAT to Scapegoat</em>, kept
-              exactly as they were the day each was set aside &mdash; including
-              the two that lost. Two are D3 builds; the rest are hand-rolled.
-            </p>
-            <span class="tags">D3 &middot; Scrollytelling &middot; Dead ends</span>
-          </div>
-        </a>
+        <li>
+          <a class="entry" href="goat-to-scapegoat/lab/">
+            <span class="entry-no">02</span>
+            <span class="entry-main">
+              <span class="entry-title">D3 Lab<span class="arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="entry-desc">
+                The five prototypes behind <em>From GOAT to Scapegoat</em>, including the two that lost.
+              </span>
+            </span>
+            <span class="entry-meta">Process</span>
+          </a>
+        </li>
 
-      </div>
+      </ul>
     </section>
 
     <!-- About -->
@@ -308,33 +197,6 @@
           clearTimeout(cat._t1); clearTimeout(cat._t2);
           cat._t1 = setTimeout(function () { face.textContent = AWAKE; }, 700);
           cat._t2 = setTimeout(function () { cat.classList.remove('hop'); }, 900);
-        });
-      }
-
-      /* --- name: one-time boop wave on load, hints it's interactive --- */
-      var letters = document.querySelectorAll('.name .l');
-      if (!reduce && letters.length) {
-        letters.forEach(function (el, i) {
-          setTimeout(function () {
-            el.classList.add('boop');
-            el.addEventListener('animationend', function () {
-              el.classList.remove('boop');
-            }, { once: true });
-          }, 900 + i * 80);
-        });
-      }
-
-      /* --- hero cat: pounces when you click the scene --- */
-      var stage = document.querySelector('.hero-stage');
-      var heroCat = document.querySelector('.scene .cat');
-      if (stage && heroCat && !reduce) {
-        stage.addEventListener('click', function () {
-          heroCat.classList.remove('pounce');
-          void heroCat.getBBox;
-          heroCat.classList.add('pounce');
-        });
-        heroCat.addEventListener('animationend', function (e) {
-          if (e.animationName === 'pounce') heroCat.classList.remove('pounce');
         });
       }
     })();
