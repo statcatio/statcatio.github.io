@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — statcat</title>
+  <meta name="description" content="Data projects by Chloe Zhang — questions a little too specific to be useful, chased until there's an answer worth looking at.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — statcat">
+  <meta property="og:description" content="Data projects by Chloe Zhang, and the notes behind them.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%233C6E9F'/><g fill='none' stroke='%23EFF3E3' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'><path d='M9 8l3 5M23 8l-3 5'/><path d='M10 13h12v6a6 6 0 0 1-12 0z'/><path d='M13.5 16h.01M18.5 16h.01'/></g></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <style>
+    .page-head { padding: clamp(28px, 6vw, 60px) 0 8px; }
+    .page-head .lab-kicker {
+      margin: 0 0 12px; font-family: var(--mono); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink);
+    }
+    .page-title { margin: 0; font-weight: 800; font-size: clamp(34px, 6vw, 58px); letter-spacing: -0.03em; line-height: 1.02; }
+    .page-lede { margin: 16px 0 0; max-width: 56ch; font-size: clamp(15px, 2vw, 18px); line-height: 1.55; color: var(--ink-2); }
+    .plates { margin: clamp(28px, 4vw, 44px) 0 10px; }
+  </style>
+</head>
+<body id="top">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../" aria-label="statcat — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22">
+            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M9 8l3 5M23 8l-3 5"/>
+              <path d="M10 13h12v6a6 6 0 0 1-12 0z"/>
+              <path d="M13.5 16h.01M18.5 16h.01"/>
+            </g>
+          </svg>
+        </span>
+        statcat
+      </a>
+      <div class="nav-links">
+        <a href="./">Projects</a>
+        <a href="../goodies/">Goodies</a>
+        <a href="../#about">About</a>
+        <a href="https://www.linkedin.com/in/chloeyuxinzhang/" class="nav-cta" target="_blank" rel="noopener">Say hi</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="doc">
+
+    <header class="page-head">
+      <p class="lab-kicker">The Field Record</p>
+      <h1 class="page-title">Projects</h1>
+      <p class="page-lede">
+        Questions a little too specific to be useful and a little too fun to let go.
+        I scrape, model, and draw until there's an answer worth looking at, then write
+        down how it was built.
+      </p>
+    </header>
+
+    <div class="plates">
+
+      <a class="plate" href="../goat-to-scapegoat/">
+        <div class="frame">
+          <img src="../assets/soccer-way.jpg"
+               alt="A street sign reading SOCCER WAY beneath strings of national flags, with a cat sitting on the fire escape above."
+               width="933" height="1400" loading="lazy" decoding="async">
+          <div class="onframe">
+            <span class="id">N&deg;01 &middot; 2026</span>
+            <h3>From GOAT to Scapegoat<span class="arrow">&rarr;</span></h3>
+          </div>
+        </div>
+        <div class="body">
+          <p>
+            The internet turned on Argentina between two World Cup finals. A
+            scrollytelling analysis of 45K+ YouTube comments and the
+            sentiment flip they reveal &mdash; same team, opposite reaction.
+            Did they change, or did we?
+          </p>
+          <span class="tags">NLP &middot; Sentiment &middot; D3 &middot; Scrollytelling</span>
+        </div>
+      </a>
+
+      <a class="plate" href="../goat-to-scapegoat/blog.html">
+        <div class="frame">
+          <svg class="art" viewBox="0 0 400 300" role="img"
+               aria-label="A diverging bar chart: one bar above the zero line in blue, one below it in brick red.">
+            <!-- zero line -->
+            <line x1="40" y1="128" x2="360" y2="128"
+                  stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+            <!-- 2022, positive -->
+            <rect x="96"  y="56"  width="58" height="72" rx="6" fill="var(--accent)"/>
+            <!-- 2026, negative -->
+            <rect x="246" y="128" width="58" height="62" rx="6" fill="var(--neg)"/>
+          </svg>
+          <div class="onframe">
+            <span class="id">Field notes &middot; method</span>
+            <h3>Measuring the turn<span class="arrow">&rarr;</span></h3>
+          </div>
+        </div>
+        <div class="body">
+          <p>
+            How N&deg;01 was actually built: where the data came from, which model did
+            the scoring, and the two checks I ran before trusting the result enough
+            to publish it.
+          </p>
+          <span class="tags">Method &middot; Writeup</span>
+        </div>
+      </a>
+
+      <!-- To add a project: copy this block, drop its folder alongside,
+           bump the N&deg; and href, add a picture and real tags. -->
+      <div class="plate soon">
+        <div class="frame">
+          <pre class="dozing" aria-hidden="true"> /\_/\
+( -.- )
+ &gt; ^ &lt;</pre>
+          <div class="onframe">
+            <span class="id">N&deg;02 &middot; soon</span>
+            <h3>In the notebook</h3>
+          </div>
+        </div>
+        <div class="body">
+          <p>Something&rsquo;s brewing. Check back.</p>
+          <span class="tags">Undecided &middot; probably too specific</span>
+        </div>
+      </div>
+
+    </div>
+    <p class="note">There is, I promise, a cat on that fire escape.</p>
+
+    <footer class="foot">
+      <div>
+        <div class="links">
+          <a href="../">← Home</a>
+          <a href="https://www.linkedin.com/in/chloeyuxinzhang/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/statcatio" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="colophon">
+         &copy; 2026 Chloe Zhang
+        </p>
+      </div>
+      <button class="cat-btn" type="button" aria-label="A small cat.">
+        <pre class="cat-face" aria-hidden="true"> /\_/\
+( o.o )
+ &gt; ^ &lt;</pre>
+      </button>
+    </footer>
+
+  </main>
+</body>
+</html>
